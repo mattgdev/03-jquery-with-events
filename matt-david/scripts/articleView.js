@@ -45,7 +45,7 @@ articleView.handleAuthorFilter = function() {
       // Use an "attribute selector" to find those articles, and fade them in for the reader.
       let $authorName = $(this).val();
       $article.hide();
-      $('article[data-author="' + $authorName + '"]').fadeIn(750);
+      $('[data-author="' + $authorName + '"]').fadeIn(750);
 
     } else {
       // TODO: If the <select> menu was changed to an option that is blank, we should first show all the articles, except the one article we are using as a template.
@@ -71,7 +71,7 @@ articleView.handleCategoryFilter = function() {
       // Use an "attribute selector" to find those articles, and fade them in for the reader.
       let $selectedCategory = $(this).val();
       $article.hide();
-      $('article[data-author="' + $selectedCategory + '"]').fadeIn(750);
+      $('article[data-category="' + $selectedCategory + '"]').fadeIn(750);
 
     } else {
       // TODO: If the <select> menu was changed to an option that is blank, we should first show all the articles, except the one article we are using as a template.
@@ -89,7 +89,7 @@ articleView.handleMainNav = function() {
   $('.main-nav').on('click', '.tab', function (event) {
     event.preventDefault();
     $('.tab-content').hide();
-    $(`#${(this).data()('content')}`).fadeIn(750);
+    $(`#${$(this).data('content')}`).fadeIn(750);
   })
   // REVIEW: Now trigger a click on the first .tab element, to set up the page.
   $('.main-nav .tab:first').click();
